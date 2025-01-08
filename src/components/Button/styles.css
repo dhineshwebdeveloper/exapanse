@@ -1,0 +1,103 @@
+:root {
+    --blue-gradientB: linear-gradient(90deg, #4a90e2, #9013fe);
+    --whiteB: #ffffff;
+    --dark-grayB: #333;
+    --light-grayB: #f5f5f5;
+    --hover-glowB: rgba(255, 255, 255, 0.4);
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    box-shadow: none;
+  }
+  
+  .btn-blue {
+    background: var(--blue-gradientB);
+    color: var(--whiteB);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-blue:hover {
+    background-position: right center;
+    box-shadow: 0 0 10px var(--hover-glowB), 0 0 20px var(--hover-glowB);
+    transform: translateY(-2px);
+  }
+  
+  .btn-blue::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    transform: skewX(-45deg);
+  }
+  
+  .btn-blue:hover::before {
+    left: 100%;
+  }
+  
+  .btn:not(.btn-blue) {
+    background: var(--whiteB);
+    color: var(--dark-grayB);
+    border: 2px solid var(--blue-gradientB);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn:not(.btn-blue):hover {
+    background: var(--blue-gradientB);
+    color: var(--whiteB);
+    box-shadow: 0 4px 10px var(--hover-glowB);
+    transform: translateY(-2px);
+  }
+  
+  .btn:not(.btn-blue)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    transform: skewX(-45deg);
+  }
+  
+  .btn:not(.btn-blue):hover::before {
+    left: 100%;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .btn-blue:hover,
+  .btn:not(.btn-blue):hover {
+    animation: pulse 0.6s ease-in-out infinite;
+  }
+  

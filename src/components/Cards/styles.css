@@ -1,0 +1,91 @@
+:root {
+    --theme-color: #4a90e2;
+    --white: #ffffff;
+    --dark-gray: #333;
+    --light-gray: #f5f5f5;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .my-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  
+  .my-Cart {
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    text-align: center;
+    padding: 2rem 1.5rem;
+    width: 27%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .my-Cart:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px var(--shadow-color);
+  }
+  
+  .my-Cart .ant-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .my-Cart h3 {
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+  }
+  
+  .my-Cart p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--theme-color);
+    margin-bottom: 1.5rem;
+  }
+  
+  .my-Cart:hover p {
+    animation: pulse 0.6s infinite alternate;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      color: var(--theme-color);
+    }
+    100% {
+      transform: scale(1.1);
+      color: #9013fe;
+    }
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .my-row {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  
+    .my-Cart {
+      width: 100%;
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .my-Cart {
+      padding: 1rem;
+    }
+  
+    .my-Cart p {
+      font-size: 1.2rem;
+    }
+  }
+  
